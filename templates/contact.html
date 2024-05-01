@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <!-- Add your CSS file link here -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/Style1.css') }}">
+    <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+    <style>
+        /* Night sky background */
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .night-sky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            z-index: -1; /* Ensure stars stay behind other content */
+        }
+
+        /* Stars animation */
+        .stars {
+            width: 1px;
+            height: 1px;
+            background: #FFF;
+            position: absolute;
+            animation: twinkle 1.5s linear infinite;
+        }
+
+        @keyframes twinkle {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Night sky background -->
+    <div class="night-sky">
+        <!-- Stars animation -->
+        <div id="stars"></div>
+    </div>
+
+    <div id="container">
+        <h1>&bull; Keep in Touch &bull;</h1>
+        <br>
+        <br>
+        <div class="underline"></div>
+        <div class="icon_wrapper">
+            <!-- Add your SVG icon code here -->
+        </div>
+        <form action="/submit_contact" method="post" id="contact_form">
+            <div class="name">
+                <label for="name">Name:</label>
+                <input type="text" placeholder="My name is" name="name" id="name_input" required>
+            </div>
+            <div class="email">
+                <label for="email">Email:</label>
+                <input type="email" placeholder="My e-mail is" name="email" id="email_input" required>
+            </div>
+            <div class="telephone">
+                <label for="telephone">Telephone:</label>
+                <input type="text" placeholder="My number is" name="telephone" id="telephone_input" required>
+            </div>
+            <div class="subject">
+                <label for="subject">Subject:</label>
+                <select name="subject" id="subject_input" required>
+                    <option disabled selected>Select subject</option>
+                    <option>I'd like to start a project</option>
+                    <option>I'd like to ask a question</option>
+                    <option>I'd like to make a proposal</option>
+                </select>
+            </div>
+            <div class="message">
+                <label for="message">Message:</label>
+                <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5" required></textarea>
+            </div>
+            <div class="submit">
+                <input type="submit" value="Send Message" id="form_button">
+            </div>
+        </form><!-- // End form -->
+    </div><!-- // End #container -->
+
+    <!-- Add your JavaScript code here to handle form submission if needed -->
+    <script src="{{ url_for('static', filename='script/account.js') }}"></script>
+    <script>
+        // JavaScript to create stars animation
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the night sky element
+            var nightSky = document.querySelector(".night-sky");
+
+            // Number of stars to generate
+            var numStars = 100;
+
+            // Generate stars
+            for (var i = 0; i < numStars; i++) {
+                var star = document.createElement("div");
+                star.classList.add("stars");
+                star.style.left = Math.random() * 100 + "vw";
+                star.style.top = Math.random() * 100 + "vh";
+                star.style.animationDelay = Math.random() * 5 + "s"; // Randomize animation delay
+                nightSky.appendChild(star);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/feedback.css') }}">
+    <style>
+        /* Add this CSS to hide emojis by default */
+        .emoji {
+            display: none;
+        }
+    </style>
+	<link rel="stylesheet" href="static/css/compiled.Scss">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+</head>
+<body>
+	<div class="navbar">
+        <div class="links">
+            <a class="nav-link" href="{{ url_for('home') }}"> QUIT</a>
+        </div>
+        <div class="rectangle"></div>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='IntelliView.png') }}" alt="Logo">
+        </div>
+    </div>
+	
+    <main>
+        <div class="rating-card">
+            <div class="rating-card__front">
+                <div class="rating-card__img">
+                    <img src="https://rvs-interactive-rating-component.vercel.app/images/icon-star.svg" alt="">
+                </div>
+                <div class="rating-card__content">
+                    <h2>How did we do?</h2>
+                    <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+                </div>
+                <div class="rating-card__ratings">
+                    <button class="rating-btn" data-rating="1">1</button>
+                    <button class="rating-btn" data-rating="2">2</button>
+                    <button class="rating-btn" data-rating="3">3</button>
+                    <button class="rating-btn" data-rating="4">4</button>
+                    <button class="rating-btn" data-rating="5">5</button>
+                </div>
+                <div class="emoji-faces">
+                    <span class="emoji" data-rating="1">😞</span>
+                    <span class="emoji" data-rating="2">😐</span>
+                    <span class="emoji" data-rating="3">😊</span>
+                    <span class="emoji" data-rating="4">😃</span>
+                    <span class="emoji" data-rating="5">😍</span>
+                </div>
+                <button class="rating-card__btn" onclick="submitFeedback()">Submit</button>
+            </div>
+        </div>
+        <div class="thank-you-message">
+            <div class="rating-card__back">
+                <div class="rating-card__img">
+                    <img src="https://rvs-interactive-rating-component.vercel.app/images/illustration-thank-you.svg" alt="">
+                </div>
+                <div class="rating-card__result">
+                    You selected <span class="rating-card__result--value">4</span> out of 5
+                </div>
+                <div class="rating-card__content">
+                    <h1>Thank you!</h1>
+                    <p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        let selectedRating = null;
+
+        const ratingButtons = document.querySelectorAll('.rating-btn');
+        const emojis = document.querySelectorAll('.emoji');
+
+        ratingButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                selectedRating = parseInt(this.getAttribute('data-rating'));
+                updateSelectedRating(selectedRating);
+                displayEmoji(selectedRating);
+            });
+
+            button.addEventListener('mouseover', function() {
+                if (!selectedRating) {
+                    const rating = parseInt(this.getAttribute('data-rating'));
+                    highlightRating(rating);
+                }
+            });
+
+            button.addEventListener('mouseleave', function() {
+                if (!selectedRating) {
+                    removeHighlight();
+                }
+            });
+        });
+
+        function updateSelectedRating(rating) {
+            document.querySelector('.rating-card__result--value').textContent = rating;
+            document.querySelector('.rating-card__back').style.display = 'block';
+            localStorage.setItem('selectedRating', rating);
+            document.querySelector('#feedbackScore').value = rating;
+            removeHighlight();
+        }
+
+        function submitFeedback() {
+            if (selectedRating !== null) {
+                const ratingCard = document.querySelector('.rating-card');
+                ratingCard.classList.add('dissolve');
+                setTimeout(() => {
+                    ratingCard.style.display = 'none';
+                    document.querySelector('.thank-you-message').style.display = 'block';
+                }, 500);
+            } else {
+                console.error("Please select a rating before submitting.");
+            }
+        }
+
+        function highlightRating(rating) {
+            for (let i = 0; i < rating; i++) {
+                ratingButtons[i].classList.add('highlight');
+            }
+        }
+
+        function removeHighlight() {
+            ratingButtons.forEach(button => {
+                button.classList.remove('highlight');
+            });
+        }
+		function displayEmoji(rating) {
+    emojis.forEach(emoji => {
+        emoji.style.display = 'inline-block';
+    });
+
+    // Hide emojis with ratings less than the selected rating
+    emojis.forEach(emoji => {
+        const emojiRating = parseInt(emoji.getAttribute('data-rating'));
+        if (emojiRating < rating) {
+            emoji.style.display = 'none';
+        }
+    });
+}
+
+        
+    </script>
+</body>
+</html>

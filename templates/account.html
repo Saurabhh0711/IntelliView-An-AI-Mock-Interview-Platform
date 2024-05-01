@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/account.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <section id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a href="#hero">
+                        <h1>Hope you like our project!!! {{ username }}</h1>
+                    </a>
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger">
+                        <div class="bar"></div>
+                    </div>
+                    <ul>
+                        <li><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                        <li><a class="nav-link" href="{{ url_for('contact') }}" >Contact</a></li>
+                        <li><a class="nav-link" href="{{ url_for('feedback') }}" >Feedback</a></li>
+                        <li><a class="nav-link" href="{{ url_for('login') }}">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Header -->
+
+    <!-- Hero Section  -->
+    <section id="hero">
+        <div class="hero container">
+            <div>
+                <h1>Hello, <span></span></h1>
+                <br>
+                <h1> <span>{{ username }}</span></h1>
+                <br>
+                <br>
+                <br><br>
+                <a href="#projects" type="button" class="cta">Thank you for using our application!!</a>
+            </div>
+        </div>
+    </section>
+    <!-- End Hero Section  -->
+
+    <!-- Rest of your HTML content -->
+
+
+  <!-- End Footer -->
+  <script src="./app.js"></script>
+</body>
+
+</html>

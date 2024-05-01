@@ -1,0 +1,59 @@
+<head>
+  <title>SignUp/LogIn Form</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <main>
+      <div class="button-box">
+          <div class="btn-active-back"></div>
+          <button class="toggle-btn login-btn">&nbsp;&nbsp;Login</button>
+          <button class="toggle-btn register-btn">&nbsp;&nbsp;Register</button>
+      </div>
+      <div class="form-box">
+          <form class="login-form" action="/login" method="POST">
+              <div class="input-box">
+                  <input type="text" id="username" name="username" required />
+                  <label for="username">Username</label>
+              </div>
+              <div class="input-box">
+                  <input type="password" id="password" name="password" required />
+                  <label for="password">Password</label>
+              </div>
+              <div class="check-box">
+                  <input type="checkbox" id="login-checkbox" />
+                  <label for="login-checkbox">Remember me</label>
+                  <span>Forgot password?</span>
+              </div>
+              <button type="submit" class="submit-button">Login</button>
+          </form>
+          <form class="register-form" action="/register" method="POST">
+              <div class="input-box">
+                  <input type="text" id="username2" name="username" required />
+                  <label for="username2">Username</label>
+              </div>
+              <div class="input-box">
+                  <input type="email" id="email" name="email" required />
+                  <label for="email">Email Id</label>
+              </div>
+              <div class="input-box">
+                  <input type="password" id="password2" name="password" required />
+                  <label for="password2">Password</label>
+              </div>
+              <div class="check-box">
+                  <input type="checkbox" id="register-checkbox" required />
+                  <label for="register-checkbox">Agree to the terms & conditions</label>
+              </div>
+              <button type="submit" class="submit-button">Register</button>
+          </form>
+      </div>
+      <div class="other-options">
+          <div class="another-option">or</div>
+          <div class="social-icons">
+              <!-- Social media icons -->
+          </div>
+      </div>
+  </main>
+  <script type="text/javascript" src="{{ url_for('static',filename='script/login.js') }}"></script>
+</body>

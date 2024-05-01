@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <!-- Add your CSS file link here -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/Style1.css') }}">
+</head>
+
+<body class-"example">
+<div class="animation-area">
+    <ul class="box-area">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+<div id="container">
+    <h1>&bull; Keep in Touch &bull;</h1>
+    <br>
+    <div class="underline"></div>
+    <div class="icon_wrapper">
+        <!-- Add your SVG icon code here -->
+    </div>
+    <form action="/submit_contact" method="post" id="contact_form">
+        <div class="name">
+            <label for="name">Name:</label>
+            <input type="text" placeholder="My name is" name="name" id="name_input" required>
+        </div>
+        <div class="email">
+            <label for="email">Email:</label>
+            <input type="email" placeholder="My e-mail is" name="email" id="email_input" required>
+        </div>
+        <div class="telephone">
+            <label for="telephone">Telephone:</label>
+            <input type="text" placeholder="My number is" name="telephone" id="telephone_input" required>
+        </div>
+        <div class="subject">
+            <label for="subject">Subject:</label>
+            <select name="subject" id="subject_input" required>
+                <option disabled selected>Select subject</option>
+                <option>I'd like to start a project</option>
+                <option>I'd like to ask a question</option>
+                <option>I'd like to make a proposal</option>
+            </select>
+        </div>
+        <div class="message">
+            <label for="message">Message:</label>
+            <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5" required></textarea>
+        </div>
+        <div class="submit">
+            <input type="submit" value="Send Message" id="form_button">
+        </div>
+    </form><!-- // End form -->
+</div><!-- // End #container -->
+</div>
+<!-- Add your JavaScript code here to handle form submission if needed -->
+
+</body>
+</html>

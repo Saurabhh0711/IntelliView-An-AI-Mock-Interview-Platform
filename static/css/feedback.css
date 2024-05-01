@@ -1,0 +1,289 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Define color variables */
+:root {
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  top: 0%;
+  /* border-bottom: 1px solid #ccc; */
+  background-color: #f4efe9;
+  position: absolute;
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 90px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.links a {
+  margin: 0 20px;
+  color: #5d5e70;
+  text-decoration: none;
+  font-family: "LEMON MILK";
+  font-weight: 100;
+  font-size: 3rem;
+}
+
+.links a:hover {
+  color: #954f3a;
+}
+
+.links a.active {
+  font-weight: 400;
+}
+
+.links::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 1px;
+  margin-right: 20px;
+}
+
+.rectangle {
+  width: 1403px;
+  height: 5px;
+  background-color: #5d5e70;
+  margin: 20px;
+}
+/* Reset default styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #000; /* Full dark black background */
+    overflow: hidden;
+}
+
+/* Main container */
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Rating card styles */
+.rating-card {
+    width: 400px; /* Increased width for better spacing */
+    background: rgba(255, 255, 255, 0.9); /* Transparent white background */
+    border-radius: 20px;
+    padding: 40px 30px;
+}
+
+.rating-card__front .rating-card__content h2 {
+    color: var(--white);
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.rating-card__front .rating-card__content p {
+    color: var(--light-grey);
+    line-height: 1.5;
+}
+
+.rating-card__ratings {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.rating-card__ratings button {
+    background: var(--dark-blue);
+    border: none;
+    color: var(--white);
+    font-size: 36px;
+    width: 60px; /* Reduced width for better spacing */
+    height: 60px; /* Reduced height for better spacing */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rating-card__ratings button:hover {
+    background: var(--medium-grey); /* Dark grey on hover */
+    color: var(--dark-blue);
+}
+
+.rating-card__ratings button:active,
+.rating-card__ratings button.active {
+    background: var(--orange);
+}
+
+.rating-card__btn {
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+    padding: 15px 30px; /* Increased padding for better appearance */
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.rating-card__btn:hover {
+    background: var(--white);
+    color: var(--orange);
+}
+
+/* Back side of the card */
+.rating-card__back {
+    display: none;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+}
+
+.rating-card__result {
+    background: var(--dark-blue);
+    color: var(--orange);
+    padding: 10px 25px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+
+.rating-card__result--value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.rating-card__back img {
+    max-width: 100%;
+}
+
+/* Thank you message styles */
+.thank-you-message {
+    display: none;
+    text-align: center;
+    color: var(--white);
+}
+
+/* Add this CSS to center the feedback form */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    text-align: center;
+}
+
+/* Add this CSS to hide emojis by default */
+.emoji {
+    display: none;
+}
+
+
+
+/* Define color variables */
+:root {
+    --particle-color: hsl(180, 100%, 80%);
+  }
+  
+  /* Styles for particle container */
+  .circle-container {
+    position: absolute;
+    transform: translateY(-10vh);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  /* Styles for individual circle particles */
+  .circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    mix-blend-mode: screen;
+    background-image: radial-gradient(
+      var(--particle-color),
+      var(--particle-color) 10%,
+      hsla(100, 83%, 79%, 0) 56%
+    );
+    animation: fade-frames 200ms infinite, scale-frames 2s infinite;
+  }
+  
+  /* Keyframes for fading animation */
+  @keyframes fade-frames {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Keyframes for scaling animation */
+  @keyframes scale-frames {
+    0% {
+      transform: scale3d(0.4, 0.4, 1);
+    }
+    50% {
+      transform: scale3d(2.2, 2.2, 1);
+    }
+    100% {
+      transform: scale3d(0.4, 0.4, 1);
+    }
+  }
+  
+  /* Styles for message */
+  .message {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    color: rgb(222, 20, 20);
+    font-family: "Josefin Slab", serif;
+    line-height: 27px;
+    font-size: 18px;
+    text-align: right;
+    pointer-events: none;
+    animation: message-frames 1.5s ease 5s forwards;
+    opacity: 0;
+  }
+  
+  /* Keyframes for message animation */
+  @keyframes message-frames {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

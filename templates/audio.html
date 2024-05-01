@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/CSS/style_audio.css">
+    <title>Interview Simulator</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="links">
+          <a class="nav-link" href="{{ url_for('home') }}">QUIT</a>
+      </div>
+      <div class="rectangle"></div>
+      <div class="logo">
+          <img src="{{ url_for('static', filename='IntelliView.png') }}" alt="Logo">
+      </div>
+  </div>
+      <!--
+     Audio image header
+      -->
+
+     {% block body %}
+
+         <!--
+        Interview question
+         -->
+        <br>
+        <blockquote>
+          
+        </blockquote>
+<br>
+<br>
+<blockquote>
+  <p class="quotation">THIS IS THE ARTIFICIAL INTELLIGENCE DOMAIN AUDIO INTERVIEW PAGE</p>
+</blockquote>
+        <!--
+        Audio recording button
+        -->
+        <br>
+        <form action="/audio_recording" method="post">
+          <div class="section" id="section1">
+            <h1 id="question"></h1>
+            <div id="video_buttons">
+              <button class="video_icons btn" id="start-record">Start Recording</button>
+  <!--            <button class="video_icons" id="stop-record">Stop Recording</button>     --> 
+              </div>
+        </div>        
+        </form>
+
+        <!--
+        Flash Messages
+        -->
+        <br>
+        <br>
+        <br>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <div class="Won">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <br>
+        <br>
+
+        <!--
+        Emotion analysis button
+        -->
+        {% if display_button == True %}
+          <form action="/audio_dash" method="get">
+            <input type="submit" name="audio_analysis" value="Get Emotion Analysis">
+          </form>
+        {% endif %}
+
+    {% endblock %}
+
+    <!--
+    Rules
+    -->
+    <script type="text/javascript" src="{{ url_for('static',filename='script/audio_test.js') }}"></script>
+  </body>
+</html>

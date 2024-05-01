@@ -1,0 +1,346 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+/* Font styles */
+html {
+  font-family: 'Montserrat', Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Body styles */
+body {
+  background: #7e8b90; /* Set background to black */
+  overflow: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Star animation */
+#stars {
+  position: fixed;
+  top: 2px;
+  left: 2px;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure stars stay behind other content */
+}
+
+/* Form container */
+#container {
+  position: relative;
+  z-index: 1; /* Ensure form stays above stars */
+  border: solid 3px #474544;
+  max-width: 768px;
+  margin: 60px auto;
+  padding: 20px; /* Adjust padding for better visibility */
+}
+
+html {
+  font-family: 'Montserrat', Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #F2F3EB;
+}
+
+button {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, input, select, textarea {
+  color: #d6aaaa;
+  font: inherit;
+  margin: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+textarea {
+  overflow: auto;
+}
+
+#container {
+  border: solid 3px #b4846b;
+  max-width: 768px;
+  margin: 60px auto;
+  position: relative;
+}
+
+form {
+  padding: 37.5px;
+  margin: 50px 0;
+}
+
+h1 {
+  color: #c3aca1;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.underline {
+  border-bottom: solid 2px #e9e4e2;
+  margin: -0.512em auto;
+  width: 80px;
+}
+
+.icon_wrapper {
+  margin: 50px auto 0;
+  width: 100%;
+}
+
+.icon {
+  display: block;
+  fill: #474544;
+  height: 50px;
+  margin: 0 auto;
+  width: 50px;
+}
+
+.email {
+	float: right;
+	width: 45%;
+}
+
+input[type='text'], [type='email'], select, textarea {
+	background: none;
+  border: none;
+	border-bottom: solid 2px #e9e4e2;
+	color: #e9e4e2;
+	font-size: 1.000em;
+  font-weight: 400;
+  letter-spacing: 1px;
+	margin: 0em 0 1.875em 0;
+	padding: 0 0 0.875em 0;
+  text-transform: uppercase;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+input[type='text']:focus, [type='email']:focus, textarea:focus {
+	outline: none;
+	padding: 0 0 0.875em 0;
+}
+
+.message {
+	float: none;
+}
+
+.name {
+	float: left;
+	width: 45%;
+}
+
+select {
+  background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png') no-repeat right;
+  outline: none;
+  --moz-appearance: none;
+  --webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.subject {
+  width: 100%;
+}
+
+.telephone {
+  width: 100%;
+}
+
+textarea {
+	line-height: 150%;
+	height: 150px;
+	resize: none;
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+	color: #e9e4e2;
+}
+
+:-moz-placeholder { 
+	color: #e9e4e2;
+	opacity: 1;
+}
+
+::-moz-placeholder {
+	color: #e9e4e2;
+	opacity: 1;
+}
+
+:-ms-input-placeholder {
+	color: #e9e4e2;
+}
+
+#form_button {
+  background: none;
+  border: solid 2px #8f746475;
+  color: #13c52b;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 20px 35px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+#form_button:hover {
+  background: #464545;
+  color: #F2F3EB;
+}
+
+@media screen and (max-width: 768px) {
+  #container {
+    margin: 20px auto;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 26px;
+  }
+  
+  .underline {
+    width: 68px;
+  }
+  
+  #form_button {
+    padding: 15px 25px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 18px;
+  }
+  
+  .icon {
+    height: 35px;
+    width: 35px;
+  }
+  
+  .underline {
+    width: 53px;
+  }
+  
+  input[type='text'], [type='email'], select, textarea {
+    font-size: 0.875em;
+  }
+}
+@keyframes move-stars {
+  from {
+    transform: translate(0, -100%);
+  }
+  to {
+    transform: translate(0, 100%);
+  }
+}
+
+#stars {
+  /* Other styles */
+  animation: move-stars 20s linear infinite alternate;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Adjust animation duration and timing */
+}
+
+/* Night sky background */
+body {
+  background: #1d2e30; /* Set background to black */
+  overflow: hidden; /* Prevent horizontal scrolling */
+}
+
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3; /* Ensure stars stay behind other content */
+}
+
+#stars {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 1003px 786px #FFF , 1631px 1830px #FFF , 1760px 339px #FFF , 878px 694px #FFF , 1621px 1719px #FFF , 1679px 973px #FFF , 320px 1831px #FFF , 43px 1426px #FFF , 852px 1483px #FFF , 1263px 785px #FFF , 218px 39px #FFF , 184px 516px #FFF , 541px 403px #FFF , 1794px 446px #FFF , 1371px 912px #FFF , 1609px 1223px #FFF , 380px 1351px #FFF , 439px 1202px #FFF , 423px 600px #FFF , 1001px 1717px #FFF , 1536px 1506px #FFF , 1926px 1402px #FFF , 1210px 843px #FFF , 476px 1358px #FFF , 1319px 276px #FFF , 1488px 58px #FFF , 1258px 455px #FFF , 211px 82px #FFF , 1414px 1652px #FFF , 149px 738px #FFF , 64px 707px #FFF , 1965px 198px #FFF , 20px 1372px #FFF , 1164px 676px #FFF , 881px 1522px #FFF , 401px 1750px #FFF , 351px 410px #FFF , 1581px 91px #FFF , 1167px 1866px #FFF , 107px 1410px #FFF , 588px 1162px #FFF , 29px 341px #FFF , 425px 1527px #FFF , 1515px 652px #FFF , 1356px 1563px #FFF , 1594px 1351px #FFF , 672px 586px #FFF , 997px 599px #FFF , 1484px 1939px #FFF , 1818px 1177px #FFF , 873px 1443px #FFF , 386px 970px #FFF , 266px 282px #FFF , 41px 580px #FFF , 435px 267px #FFF , 416px 538px #FFF , 489px 1753px #FFF , 1437px 982px #FFF , 848px 141px #FFF , 743px 1753px #FFF , 850px 424px #FFF , 1623px 271px #FFF , 1743px 1178px #FFF , 989px 1373px #FFF , 1283px 653px #FFF , 1988px 1508px #FFF , 1788px 1741px #FFF , 1386px 42px #FFF , 207px 945px #FFF , 1781px 485px #FFF , 288px 109px #FFF , 1259px 1403px #FFF , 314px 285px #FFF , 597px 428px #FFF , 1903px 1356px #FFF , 412px 1083px #FFF , 53px 1003px #FFF , 1187px 986px #FFF , 511px 1252px #FFF , 252px 22px #FFF , 168px 1765px #FFF , 500px 1144px #FFF , 206px 1250px #FFF , 1863px 1523px #FFF , 1581px 1689px #FFF , 129px 875px #FFF , 783px 1837px #FFF , 1216px 1686px #FFF , 1725px 931px #FFF , 1248px 985px #FFF , 1874px 1016px #FFF , 1616px 1672px #FFF , 1692px 1023px #FFF , 848px 1902px #FFF , 52px 771px #FFF , 1530px 879px #FFF , 1822px 19px #FFF , 675px 1247px #FFF , 426px 446px #FFF , 41px 839px #FFF , 385px 1918px #FFF , 1115px 730px #FFF , 207px 623px #FFF , 797px 1547px #FFF , 659px 141px #FFF , 8px 574px #FFF , 605px 1211px #FFF , 1766px 1011px #FFF , 559px 1123px #FFF , 868px 1244px #FFF , 1402px 1439px #FFF , 1059px 524px #FFF , 747px 1162px #FFF , 1360px 1278px #FFF , 201px 1575px #FFF , 1213px 320px #FFF , 588px 1085px #FFF , 1550px 1776px #FFF , 791px 583px #FFF , 1219px 280px #FFF , 1776px 1545px #FFF , 453px 740px #FFF , 1677px 986px #FFF , 249px 1968px #FFF , 757px 288px #FFF , 620px 1605px #FFF , 1334px 926px #FFF , 1431px 1202px #FFF , 1298px 1938px #FFF , 1853px 993px #FFF , 1248px 464px #FFF , 867px 507px #FFF , 285px 927px #FFF , 1909px 1156px #FFF , 227px 376px #FFF , 1809px 1278px #FFF , 304px 1129px #FFF , 79px 1608px #FFF , 224px 840px #FFF , 1525px 445px #FFF , 407px 1646px #FFF , 112px 1033px #FFF , 584px 1621px #FFF , 635px 1088px #FFF , 751px 1414px #FFF , 1715px 885px #FFF , 1994px 1823px #FFF , 124px 1085px #FFF , 1944px 1332px #FFF , 457px 402px #FFF , 239px 820px #FFF , 140px 1650px #FFF , 1961px 951px #FFF , 1346px 448px #FFF , 680px 588px #FFF , 64px 1772px #FFF , 1265px 934px #FFF , 810px 888px #FFF , 1955px 1188px #FFF , 1633px 66px #FFF , 1379px 920px #FFF , 495px 1338px #FFF , 802px 1095px #FFF , 1503px 745px #FFF , 1404px 1099px #FFF , 1046px 663px #FFF , 1522px 1123px #FFF , 618px 1360px #FFF , 1397px 158px #FFF , 1216px 430px #FFF , 858px 52px #FFF , 475px 1901px #FFF , 1453px 1239px #FFF , 1670px 1175px #FFF , 1808px 1391px #FFF , 1507px 1665px #FFF , 37px 436px #FFF , 17px 491px #FFF , 1147px 1008px #FFF , 237px 1989px #FFF , 744px 418px #FFF , 1028px 895px #FFF , 1368px 1842px #FFF , 794px 1622px #FFF , 379px 1162px #FFF , 1986px 58px #FFF , 1506px 1341px #FFF , 1578px 1679px #FFF , 937px 978px #FFF , 1971px 1030px #FFF , 1500px 234px #FFF , 255px 1988px #FFF , 1931px 1116px #FFF , 1532px 1906px #FFF , 1527px 1952px #FFF , 1167px 117px #FFF , 402px 43px #FFF , 202px 1032px #FFF , 1105px 17px #FFF , 534px 1477px #FFF , 282px 528px #FFF , 744px 1036px #FFF , 1633px 759px #FFF , 533px 1433px #FFF , 455px 763px #FFF , 1335px 11px #FFF , 996px 1127px #FFF , 1428px 1298px #FFF , 613px 1228px #FFF , 847px 1264px #FFF , 1512px 1264px #FFF , 1064px 426px #FFF , 579px 549px #FFF , 86px 96px #FFF , 1551px 394px #FFF , 488px 755px #FFF , 481px 1293px #FFF , 433px 1345px #FFF , 1120px 1367px #FFF , 1210px 1505px #FFF , 1995px 1460px #FFF , 381px 1273px #FFF , 244px 862px #FFF , 1880px 468px #FFF , 1520px 1101px #FFF , 520px 210px #FFF , 1929px 1604px #FFF , 1323px 28px #FFF , 889px 958px #FFF , 1691px 1644px #FFF , 1267px 597px #FFF , 554px 1963px #FFF , 1764px 1116px #FFF , 1087px 37px #FFF , 388px 981px #FFF , 1397px 1226px #FFF , 557px 1929px #FFF , 1932px 70px #FFF , 103px 904px #FFF ;
+  animation: animStar 50s linear infinite;
+}
+
+
+
+
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+div.section 
+{
+    /* padding: 60px 40px; */
+    min-height: 100vh;
+    scroll-snap-align : start;
+    margin: 0px;
+    padding: 0px;
+}
+
+.subject {
+  margin-bottom: 20px; /* Adjust spacing as needed */
+}
+
+
+
+.subject select {
+  width: 100%; /* Set the width of the dropdown */
+  padding: 10px; /* Adjust padding as needed */
+  font-size: 16px; /* Adjust font size as needed */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: transparent; /* Make dropdown transparent */
+  color: #fff; /* Dropdown text color */
+}
+
+
+
+.subject select option {
+  padding: 10px; /* Adjust padding as needed */
+  font-size: 16px; /* Adjust font size as needed */
+  color: #0f0d0d; /* List item text color */
+}
